@@ -1,0 +1,19 @@
+#1 THE FIRST QUERY
+{
+  user(id: "47") {
+    id,
+    firstName,
+    age
+  }
+}
+
+#1 RESULT
+{
+  "data": {
+    "user": {
+      "id": "47",
+      "firstName": "Samantha",
+      "age": 21
+    }
+  }
+}
