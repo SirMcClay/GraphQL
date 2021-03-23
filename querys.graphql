@@ -1,12 +1,11 @@
 #1 THE FIRST QUERY
 {
   user(id: "47") {
-    id,
-    firstName,
+    id
+    firstName
     age
   }
 }
-
 #1 RESULT
 {
   "data": {
@@ -14,6 +13,35 @@
       "id": "47",
       "firstName": "Samantha",
       "age": 21
+    }
+  }
+}
+
+#2 QUERY USER RELATION WITH COMPANY
+{
+  user(id: "23") {
+    id
+    firstName
+    age
+    company {
+      id
+      name
+      description
+    }
+  }
+}
+#2 RESULT
+{
+  "data": {
+    "user": {
+      "id": "23",
+      "firstName": "Bill",
+      "age": 20,
+      "company": {
+        "id": "1",
+        "name": "Apple",
+        "description": "iphone"
+      }
     }
   }
 }
