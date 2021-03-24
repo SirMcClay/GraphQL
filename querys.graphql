@@ -6,7 +6,7 @@
     age
   }
 }
-#1 RESULT
+#RESULT
 {
   "data": {
     "user": {
@@ -30,7 +30,7 @@
     }
   }
 }
-#2 RESULT
+#RESULT
 {
   "data": {
     "user": {
@@ -42,6 +42,25 @@
         "name": "Apple",
         "description": "iphone"
       }
+    }
+  }
+}
+
+#3 QUERY TO REACH THE COMPANY DIRECTLY
+{
+  company(id: "1") {
+    id
+	  name
+    description
+  }
+}
+#RESULT
+{
+  "data": {
+    "company": {
+      "id": "1",
+      "name": "Apple",
+      "description": "iphone"
     }
   }
 }
