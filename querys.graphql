@@ -228,3 +228,34 @@ query findCompany {
     }
   }
 }
+
+#8 USING QUERY FRAGMENTS TO AVOID CODE AND PROPERTIES DUPLICATION
+{
+  apple: company(id: "1") {
+    ...companyDetails
+  }
+  google: company(id: "2") {
+    ...companyDetails
+  }
+}
+
+fragment companyDetails on Company {
+  id
+  name
+  description
+}
+#RESULT
+{
+  "data": {
+    "apple": {
+      "id": "1",
+      "name": "Apple",
+      "description": "iphone"
+    },
+    "google": {
+      "id": "2",
+      "name": "Google",
+      "description": "search"
+    }
+  }
+}
