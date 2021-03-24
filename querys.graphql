@@ -199,3 +199,32 @@ query findCompany {
     }
   }
 }
+
+#7 DOING THE SAME QUERY AND RENAME THE RESULT KEY
+{
+  apple: company(id: "1") {
+    id
+	  name
+    description
+  }
+  google: company(id: "2") {
+    id
+	  name
+    description
+  }
+}
+#RESULT
+{
+  "data": {
+    "apple": {
+      "id": "1",
+      "name": "Apple",
+      "description": "iphone"
+    },
+    "google": {
+      "id": "2",
+      "name": "Google",
+      "description": "search"
+    }
+  }
+}
