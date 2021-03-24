@@ -297,3 +297,22 @@ mutation {
     }
   }
 }
+
+#11 RUN A MUTATION TO EDIT USER
+mutation {
+  editUser(id: "40", age: 10) {
+    id
+    firstName
+    age
+  }
+}
+#RESULT
+{
+  "data": {
+    "editUser": {
+      "id": "40",
+      "firstName": "Alex",
+      "age": 10
+    }
+  }
+}
