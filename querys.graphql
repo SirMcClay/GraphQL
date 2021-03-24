@@ -101,3 +101,82 @@
     }
   }
 }
+
+#5 A WEIRD OVER NESTING QUERY EXPLORING CIRCULAR RELATIONS
+{
+  company(id: "2") {
+    id
+	  name
+    description
+    users {
+      id
+      firstName
+      age
+      company {
+        name
+        users {
+          firstName
+          company {
+            name
+          }
+        }
+      }
+    }
+  }
+}
+#RESULT
+{
+  "data": {
+    "company": {
+      "id": "2",
+      "name": "Google",
+      "description": "search",
+      "users": [
+        {
+          "id": "40",
+          "firstName": "Alex",
+          "age": 40,
+          "company": {
+            "name": "Google",
+            "users": [
+              {
+                "firstName": "Alex",
+                "company": {
+                  "name": "Google"
+                }
+              },
+              {
+                "firstName": "Nick",
+                "company": {
+                  "name": "Google"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "41",
+          "firstName": "Nick",
+          "age": 40,
+          "company": {
+            "name": "Google",
+            "users": [
+              {
+                "firstName": "Alex",
+                "company": {
+                  "name": "Google"
+                }
+              },
+              {
+                "firstName": "Nick",
+                "company": {
+                  "name": "Google"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
