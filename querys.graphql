@@ -180,3 +180,22 @@
     }
   }
 }
+
+#6 A USEFUL KEYWORD QUERY AND A WAY TO NAME THE QUERY
+query findCompany {
+  company(id: "2") {
+    id
+	  name
+    description
+  }
+}
+#RESULT
+{
+  "data": {
+    "company": {
+      "id": "2",
+      "name": "Google",
+      "description": "search"
+    }
+  }
+}
