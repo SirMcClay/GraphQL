@@ -259,3 +259,22 @@ fragment companyDetails on Company {
     }
   }
 }
+
+#9 RUN A MUTATION TO ADD USER
+mutation {
+  addUser(firstName: "Stephen", age: 26) {
+    id
+    firstName
+    age
+  }
+}
+#RESULT
+{
+  "data": {
+    "addUser": {
+      "id": "cc5YR0v",
+      "firstName": "Stephen",
+      "age": 26
+    }
+  }
+}
