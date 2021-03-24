@@ -64,3 +64,30 @@
     }
   }
 }
+
+#4 QUERY TO REACH COMPANY AND ALL USERS FROM THIS COMPANY
+{
+  company(id: "1") {
+    id
+	  name
+    description
+    users {
+      firstName
+    }
+  }
+}
+#RESULT
+{
+  "data": {
+    "company": {
+      "id": "1",
+      "name": "Apple",
+      "description": "iphone",
+      "users": [
+        {
+          "firstName": "Bill"
+        }
+      ]
+    }
+  }
+}
