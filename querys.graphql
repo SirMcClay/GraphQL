@@ -278,3 +278,22 @@ mutation {
     }
   }
 }
+
+#10 RUN A MUTATION TO DELETE USER
+mutation {
+  deleteUser(id: "23") {
+    id
+    firstName
+    age
+  }
+}
+#RESULT
+{
+  "data": {
+    "deleteUser": {
+      "id": null,
+      "firstName": null,
+      "age": null
+    }
+  }
+}
